@@ -1,3 +1,3 @@
 # Въведение в Javascript / Typescript 
 
-https://github.io/pmg-vt-js/intro
+https://pmg-vt-js.github.io/intro

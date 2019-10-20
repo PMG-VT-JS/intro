@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>JS Intro</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/theme/white.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/lib/css/monokai.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+    <style>
+        #left {
+            left: -8.33%;
+            /* text-align: left; */
+            float: left;
+            width: 50%;
+            z-index: -10;
+        }
+
+        #right {
+            /* left:31.25%; */
+            /* top: 75px; */
+            float: right;
+            /* text-align: right; */
+            z-index: -10;
+            width: 50%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section data-markdown>
+                <textarea data-template>
+                    ## Историята
+                    - (+0) 1995 - Brendan Eich (Netscape) създава първата версия на езика за 10 дни <!-- .element: class="fragment"  -->
+                    - (+1) 1996 - Nescape внасят предложение за стандартизация в ECMA (European Computer Manufacturers Association) <!-- .element: class="fragment"  -->
+                    - (+1) 1997 - Стандарт ECMA-262, първо издание, ECMAScript 1 (ES1) <!-- .element: class="fragment"  -->
+                    - (+1) 1998 - ECMAScript 2 (ES2) <!-- .element: class="fragment"  -->
+                    - (+1) 1999 - ECMAScript 3 (ES3) <!-- .element: class="fragment"  -->
+                    - [ 2003 - Работата по ECMAScript 4 е изоставена поради корпоративни разногласия ]<!-- .element: class="fragment"  -->
+                    - (+10) 2009 - ECMAScript 5 (ES5), NodeJS <!-- .element: class="fragment"  -->
+                    - [ 2012 - Появява се езикът Typescript (версия 0.8) ] <!-- .element: class="fragment"  -->
+                    - (+6) 2015 - ECMAScript 6 (ES6) => ECMAScript2015 (ES2015)  <!-- .element: class="fragment"  -->
+                    - (+1) 2016 - ECMAScript2016 (ES2016) <!-- .element: class="fragment"  -->
+                    - (+1) 2017 - ECMAScript2017 (ES2017) <!-- .element: class="fragment"  -->
+                    - (+1) 2018 - ECMAScript2018 (ES2018) <!-- .element: class="fragment"  -->
+                    - (+1) 2019 - ECMAScript2019 (ES2019) <!-- .element: class="fragment"  -->
+            	</textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Характеристики
+                    - Реализация на стандарта ECMA-262 <!-- .element: class="fragment"  -->
+                    - Интерпретируем език <!-- .element: class="fragment"  -->
+                    - C-подобен синтаксис (curly bracket syntax) [C++, C#, Java, PHP]<!-- .element: class="fragment"  -->
+                    - Динамични типове<!-- .element: class="fragment"  -->
+                    - Функциите са ... обекти (first class functions)<!-- .element: class="fragment"  -->
+            	</textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ## Примитивни типове данни
+                    - `Boolean`: `true`, `false`
+                    - `Number`: `1`, `1.5834`, `-100`, `Infinity`
+                    - `String`: `"това"`, `'е'`, `` `стринг` ``, `'1'`, `'1.5834'`, `'true'`, `'null'`, `''` (празен стринг)
+                    - `null`: единствена стойност `null`
+                    - `undefined`: единствена стойност `undefined`
+                    - [`Symbol` (по-късно)]
+            	</textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### Операции между еднотипни
+                    ### примитивни стойности
+                    - `Number`:  `2 + 2 => 4`, `8 * 7 => 56`, `10/0 => NaN`, `6 * 8 / 2`
+                    - `String`: '2' + '2' => '22' (конкатенация)
+                    - `Boolean`: `true && false`, `false || false`
+            	</textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### Преобразуване от един тип в друг
+                    - `Boolean(v)`: `undefined`, `null`, `NaN`, `0`, `""`, `false` => `false`, всичко друго => `true`
+                    - `Number(v)`: Number('123') => 123, Number(true) => 1
+                    - `String(v)`: `String(2)` => `'2'`, `String(2) + String(2)` => `'22'`, `String(2 + 2)` => `'4'`
+            	</textarea>
+            </section>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/js/reveal.js"></script>
+
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            history: true,
+            width: "100%",
+            height: "100%",
+            dependencies: [
+                { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/marked.js' },
+                { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/markdown/markdown.js' },
+                { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/notes/notes.js', async: true },
+                { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/plugin/highlight/highlight.js', async: true }
+            ]
+        });
+    </script>
+</body>
+
+</html>
