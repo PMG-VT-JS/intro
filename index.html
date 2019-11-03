@@ -97,10 +97,21 @@
             </section>
             <section data-markdown>
                 <textarea data-template>
-                    ### Преобразуване от един тип в друг
+                    ### Явно преобразуване 
+                    ### от един тип в друг
                     - `Boolean(v)`: `undefined`, `null`, `NaN`, `0`, `""`, `false` => `false`, всичко друго => `true`
                     - `Number(v)`: Number('123') => 123, Number(true) => 1
                     - `String(v)`: `String(2)` => `'2'`, `String(2) + String(2)` => `'22'`, `String(2 + 2)` => `'4'`
+            	</textarea>
+            </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ### Неявно преобразуване 
+                    ### от един тип в друг
+                    - `Boolean`: `2 && true` => `Boolean(2) && Boolean(true) => true && true => true`
+                    - `Number`: `2 + true` => `Number(2) + Number(true)` => `2 + 1` => `3`
+                    - `String(v)`: `2 + String(2)` => `String(2) + String(2)` => `'22'` 
             	</textarea>
             </section>
         </div>
