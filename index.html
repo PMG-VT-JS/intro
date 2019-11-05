@@ -114,6 +114,149 @@
                     - `String(v)`: `2 + String(2)` => `String(2) + String(2)` => `'22'` 
             	</textarea>
             </section>
+
+            <section data-markdown>
+                <textarea data-template>
+                    ### Променливи
+                    - Декларация - var (и let и const) <!-- .element: class="fragment"  -->
+                    - Инициализация <!-- .element: class="fragment"  -->
+                    - Глобални и локални промеливи (global scope, function scope) <!-- .element: class="fragment"  -->
+                    - Hoisting <!-- .element: class="fragment"  -->
+                    - Блокове - { ... }, block scope <!-- .element: class="fragment"  -->
+                    - Блок-локални промеливи - let и const <!-- .element: class="fragment"  -->
+            	</textarea>
+            </section>
+            <section data-markdown>
+                <textarea data-template>
+                    ### Масиви
+                    - Array Literal - [ 1, 2, , '3', ] <!-- .element: class="fragment"  -->
+                    - Пряк достъп до елементите - arr[0], arr[1], ... <!-- .element: class="fragment"  -->
+                    - Променлива дължина - length<!-- .element: class="fragment"  -->
+                    - Итериране (процедурен стил) - for, while, for ... in, for ... of <!-- .element: class="fragment"  -->
+                    - Итериране (функционален стил) - .forEach(), .find(), .filter(), .map(), .reduce() <!-- .element: class="fragment"  -->
+                    - Манипулации - .push(), .pop(), .concat() <!-- .element: class="fragment"  -->
+            	</textarea>
+            </section>
+            <section>
+                <section data-markdown>
+                    <textarea data-template>
+                        ### Обекти
+                        Object Literal
+                        ```
+                        var obj = { 
+                            firstName: 'John', 
+                            lastName: 'Doe', 
+                            fullName: function () {
+                                return this.firstName + ' ' + this.lastName;
+                            },
+                            _ageInMonths: 18 * 12,
+                            address: {
+                                street: 'Sesame',
+                                num: 42
+                            }
+                        }
+
+                        console.log(obj.fullName()) => "John Doe"
+                        ```
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Object Literal - method shorthand syntax
+                        ```
+                        var obj = { 
+                            firstName: 'John', 
+                            lastName: 'Doe',
+                            fullName: function () {
+                                return this.firstName + ' ' + this.lastName;
+                            },
+                            fullNameLowercase() {
+                                return this.fullName().toLowerCase()
+                            }
+                            _ageInMonths: 18 * 12,
+                        }
+
+                        console.log(obj.fullName()) => "John Doe";
+                        console.log(obj.fullNameLowercase()) => "john doe";
+                        ```
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Object Literal - getters & setters
+                        ```
+                        var obj = { 
+                            firstName: 'John', 
+                            lastName: 'Doe',
+                            fullName: function () {
+                                return this.firstName + ' ' + this.lastName;
+                            },
+                            fullNameLowercase() {
+                                return this.fullName().toLowerCase()
+                            }
+                            _ageInMonths: 18 * 12,
+                            get age() {
+                                return this._ageInMonths / 12;
+                            }
+                            set age(years) {
+                                this._ageInMonths = years * 12;
+                            }
+                        }
+
+                        obj.age = 18;
+                        console.log(obj._ageInMonths) => 216 // 18 * 12;
+                        console.log(obj.age) => 18 ;
+                        ```
+                    </textarea>
+                </section>
+                <section data-markdown>
+                    <textarea data-template>
+                        Object Literal - computed property names
+                        ```
+                        var prop = 'hobby';
+                        ...
+                        var obj = { 
+                            firstName: 'John', 
+                            lastName: 'Doe',
+                            [prop]: 'Javascript'    
+                        }
+
+                        console.log(obj.prop) => undefined;
+                        console.log(obj.hobby) => "Javascript"
+                        ```
+                    </textarea>
+                </section>
+
+                <section data-markdown>
+                    <textarea data-template>
+                        Object Literal - short syntax
+                        ```
+                        var firstName = 'John';
+                        var lastName = 'Doe';
+                        var hobby = 'Javascript';
+
+                        var obj = { 
+                            firstName: firstName, 
+                            lastName: lastName,
+                            hobby: hobby
+                        }
+
+                        // same as
+
+                        var obj = {
+                            firstName,
+                            lastName,
+                            hobby
+                        }
+
+                        console.log(obj.firstName) => "John";
+                        console.log(obj.lastName) => "Doe";
+                        console.log(obj.hobby) => "Javascript"
+                        ```
+                    </textarea>
+                </section>
+
+            </section>
         </div>
     </div>
 
